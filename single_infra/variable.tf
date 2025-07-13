@@ -1,10 +1,11 @@
 variable "bucket_name" {
-  description = "Name of the Google Cloud Storage bucket"
   type        = string
+  description = "The name of the Google Cloud Storage bucket."
 }
 
 variable "bucket_location" {
-  type = string
+  type        = string
+  description = "The location of the Google Cloud Storage bucket."
 }
 
 variable "force_destroy" {
@@ -13,25 +14,28 @@ variable "force_destroy" {
 }
 
 variable "public_access_prevention" {
-  type    = string
-  default = "enforced"
+  type        = string
+  default     = "enforced"
+  description = "Prevent public access to the bucket"
 }
 
 variable "lifecycle_rule_age" {
-  type = number
+  type        = number
+  default     = 3
+  description = "The age in days after which objects in the  bucket"
 }
-
 
 variable "project_id" {
   type        = string
-  description = "The ID of the Google Cloud project"
+  description = "value"
 }
 
 variable "region" {
-  type = string
+  type    = string
+  default = "us-central1"
+
 }
 
 variable "credentials" {
-  type        = string
-  description = "Path to the Google Cloud service account credentials JSON file"
+  type = string
 }
