@@ -1,10 +1,12 @@
-from airflow.decorators import dag, task
-from airflow.providers.google.cloud.transfers.postgres_to_gcs import PostgresToGCSOperator
-from airflow.providers.postgres.hooks.postgres import PostgresHook
-import great_expectations as gx
-from datetime import datetime
-import pandas as pd
 import logging
+from datetime import datetime
+
+import great_expectations as gx
+import pandas as pd
+from airflow.decorators import dag, task
+from airflow.providers.google.cloud.transfers.postgres_to_gcs import \
+    PostgresToGCSOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
 
 TABLES = ['stores', 'sale_transactions', 'inventory', 'customers', 'products', 'sales_managers']
 BUCKET_NAME = 'maxi-sales-bucket002'
