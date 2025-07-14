@@ -11,20 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - uses: actions/setup-python@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
         with:
           python-version: "3.9.0"
-      - name: install dependencies
+
+      - name: Install dependencies
         run: pip install -r requirements-dev.txt
 
+      - name: Install isort
+        run: pip install isort
 
-      - name: running isort
-        run: isort --check only .
+      - name: Running isort
+        run: isort --check-only .
 
-      - name: running flake8
-        run: flake8 --max-line-lenght=120 .
-
-
+      - name: Running flake8
+        run: flake8 --max-line-length=120 .
