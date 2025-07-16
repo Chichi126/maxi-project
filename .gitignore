@@ -1,0 +1,8 @@
+venv
+servicekey.json
+terraform.tfvars
+# Ignore Terraform State files
+.terraform/*
+terraform.*
+.terraform.lock.*
+terraform
