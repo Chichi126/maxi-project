@@ -1,0 +1,13 @@
+{"timestamp":"2025-07-17T23:46:51.189030","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T23:46:51.195806","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag2.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T23:51:46.879982","level":"error","event":"Process timed out, PID: 517","logger":"airflow.utils.timeout.TimeoutPosix"}
+{"timestamp":"2025-07-17T23:51:50.657679Z","level":"error","event":"Exception ignored in: <function _collection_gced at 0x7f15f6786200>","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.658181Z","level":"error","event":"Traceback (most recent call last):","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.658695Z","level":"error","event":"  File \"/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/event/registry.py\", line 53, in _collection_gced","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.660506Z","level":"error","event":"    def _collection_gced(ref):","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.661289Z","level":"error","event":"  File \"/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/timeout.py\", line 69, in handle_timeout","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.662018Z","level":"error","event":"    raise AirflowTaskTimeout(self.error_message)","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.667302Z","level":"error","event":"airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/dag2.py after 30.0s.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.672121Z","level":"error","event":"Please take a look at these docs to improve your DAG import time:","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.674028Z","level":"error","event":"* https://airflow.apache.org/docs/apache-airflow/3.0.2/best-practices.html#top-level-python-code","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-17T23:51:50.677183Z","level":"error","event":"* https://airflow.apache.org/docs/apache-airflow/3.0.2/best-practices.html#reducing-dag-complexity, PID: 517","chan":"stderr","logger":"task"}

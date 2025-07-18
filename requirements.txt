@@ -1,17 +1,34 @@
 psycopg2-binary
 python-dateutil
 pandas
+python-dotenv
 numpy
 pyarrow
+google-cloud-storage
+
+
+
+
+
+
+
+
+
+
+
+
+
 # PostgreSQL provider
-apache-airflow-providers-postgres
+#apache-airflow-providers-postgres
 
 # Microsoft Azure providers
-apache-airflow-providers-google
+#apache-airflow-providers-google
 
 # Optional: Additional Azure libraries if needed
-great-expectations
+#great-expectations
 
-
+openmeteo-requests
+requests-cache 
+retry-requests
 # Great Expectations provider for Airflow
 #apache-airflow-providers-great-expectations

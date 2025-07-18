@@ -1,5 +1,5 @@
 venv
-servicekey.json
+credentials.json
 terraform.tfvars
 # Ignore Terraform state files
 .terraform/*

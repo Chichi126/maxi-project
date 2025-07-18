@@ -1,0 +1,4 @@
+{"timestamp":"2025-07-16T23:00:51.297551","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-16T23:00:51.299423","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-16T23:00:55.469492","level":"info","event":"Connection Retrieved 'postgres_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-07-16T23:00:55.563932","level":"warning","event":"/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py:482: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  return psql.read_sql(sql, con=conn, params=parameters, **kwargs)\n","logger":"py.warnings"}
