@@ -14,11 +14,11 @@ GCS_BUCKET_NAME = 'maxi-sales-bucket002'
 # Set Google Cloud credentials directly for local usage
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/apple/Desktop/maxi-project/single_infra/credentials.json"
 
-POSTGRES_USER = "postgres"
-POSTGRES_PASSWORD = "chichi"
-POSTGRES_HOST = "localhost"
+POSTGRES_USER = os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST = os.getenv('POSTGRES_HOST')
 POSTGRES_PORT = 5432
-POSTGRES_DB = "sales_db"
+POSTGRES_DB = os.getenv('POSTGRES_DB')
 
 # Configure logging to output to the console
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

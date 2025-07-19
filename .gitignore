@@ -6,3 +6,5 @@ terraform.tfvars
 terraform.*
 .terraform
 .terraform.lock.hcl
+wt.py
+single.py
