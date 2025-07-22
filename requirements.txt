@@ -4,9 +4,14 @@ pandas
 python-dotenv
 numpy
 pyarrow
-google-cloud-storage
 
+openmeteo-requests
+requests-cache 
+retry-requests 
 
+# Apache Airflow dependencies
+apache-airflow-providers-google
+apache-airflow-providers-postgres
 
 
 
