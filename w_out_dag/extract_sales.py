@@ -14,11 +14,11 @@ GCS_BUCKET_NAME = 'maxi-sales-bucket001'
 # Set Google Cloud credentials directly for local usage
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/apple/Desktop/maxi-project/cloud_infra/credentials.json"
 
-POSTGRES_USER = os.getenv('POSTGRES_USER')
-POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
-POSTGRES_HOST = os.getenv('POSTGRES_HOST')
-POSTGRES_PORT = os.getenv('POSTGRES_PORT')
-POSTGRES_DB = os.getenv('POSTGRES_DB')
+POSTGRES_USER = 'postgres'  #os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = 'chinwa' #os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST =  'localhost'   #os.getenv('POSTGRES_HOST')
+POSTGRES_PORT =   5434  #os.getenv('POSTGRES_PORT')
+POSTGRES_DB =   'sales_db'  #os.getenv('POSTGRES_DB')
 
 # Configure logging to output to the console
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -50,7 +50,7 @@ def extract_data(conn, query):
 # Format data to CSV
 def format_data_to_csv(df, filename):
     try:
-        df.to_csv(filename, index=False, date_format='%Y-%m-%d %H:%M:%S')
+        df.to_parquet(filename, index=False, date_format='%Y-%m-%d %H:%M:%S')
         return filename
     except Exception as e:
         logging.error(f"Error formatting data to CSV: {e}")
@@ -62,7 +62,7 @@ def upload_to_gcs(bucket_name, source_file_name, destination_blob_name):
     try:
         storage_client = storage.Client()
         bucket = storage_client.bucket(bucket_name)
-        blob = bucket.blob(f'sales/{destination_blob_name}')
+        blob = bucket.blob(f'sales_date/{destination_blob_name}')
 
         # Upload the file
         blob.upload_from_filename(source_file_name)
@@ -141,11 +141,11 @@ if __name__ == "__main__":
                 logging.info(f"Data extracted for table: {table_name}")
 
                 # Format the data to CSV
-                csv_file = format_data_to_csv(df, f"{table_name}.csv")
+                csv_file = format_data_to_csv(df, f"{table_name}.parquet")
 
                 if csv_file:
                     # Upload the CSV file to GCS
-                    upload_to_gcs(GCS_BUCKET_NAME, csv_file, f"{table_name}.csv")
+                    upload_to_gcs(GCS_BUCKET_NAME, csv_file, f"{table_name}.parquet")
 
                 # Perform data quality validation
                 validate_data_quality(table_name, conn)

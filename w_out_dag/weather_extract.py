@@ -141,7 +141,7 @@ import os
 
 
 # Configuration
-GCS_BUCKET_NAME = 'maxi-sales-bucket002'
+GCS_BUCKET_NAME = 'maxi-sales-bucket001'
 
 logger = logging.getLogger(__name__)
 
@@ -245,7 +245,7 @@ def weather_data():
             
             # Use the SAME timestamp for all files in this DAG run
             file_name = f"{location['name']}_weather_data_{timestamp}.parquet"
-            blob = bucket.blob(f'weather_data/{file_name}') 
+            blob = bucket.blob(f'weathers_data/{file_name}') 
             blob.upload_from_string(buffer.getvalue(), content_type='application/octet-stream')
             results.append(file_name)
             logger.info(f"Weather data for {location['name']} saved to GCS as {file_name}")
