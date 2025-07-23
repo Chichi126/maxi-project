@@ -202,7 +202,7 @@ def weather_data():
             # Process daily data
             daily = response.Daily()
         
-            # Create date range
+            # Create date rangea
             date_range = pd.date_range(
                 start=pd.to_datetime(daily.Time(), unit="s", utc=True),
                 end=pd.to_datetime(daily.TimeEnd(), unit="s", utc=True),
