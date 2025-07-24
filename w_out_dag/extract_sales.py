@@ -8,17 +8,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration
-TABLES = ['stores', 'sale_transactions', 'inventory', 'customers', 'products', 'sales_managers']
+TABLES = ['stores', 'sale_transactions', 'inventory', 'customers', 'products']
 GCS_BUCKET_NAME = 'maxi-sales-bucket001'
 
 # Set Google Cloud credentials directly for local usage
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/apple/Desktop/maxi-project/cloud_infra/credentials.json"
 
-POSTGRES_USER = 'postgres'  #os.getenv('POSTGRES_USER')
-POSTGRES_PASSWORD = 'chinwa' #os.getenv('POSTGRES_PASSWORD')
-POSTGRES_HOST =  'localhost'   #os.getenv('POSTGRES_HOST')
-POSTGRES_PORT =   5434  #os.getenv('POSTGRES_PORT')
-POSTGRES_DB =   'sales_db'  #os.getenv('POSTGRES_DB')
+POSTGRES_USER = os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST =  os.getenv('POSTGRES_HOST')
+POSTGRES_PORT =  os.getenv('POSTGRES_PORT')
+POSTGRES_DB =   os.getenv('POSTGRES_DB')
 
 # Configure logging to output to the console
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

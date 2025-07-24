@@ -10,7 +10,7 @@ import os
 
 
 # Configuration
-GCS_BUCKET_NAME = 'maxi-sales-bucket001'
+GCS_BUCKET_NAME = 'maxichistore'
 
 logger = logging.getLogger(__name__)
 
