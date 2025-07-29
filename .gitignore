@@ -5,3 +5,4 @@ terraform.tfvars
 terraform.*
 .terraform
 .terraform.lock.hcl
+dags/sales/sale_transactions.csv
