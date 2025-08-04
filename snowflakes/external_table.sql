@@ -207,7 +207,7 @@ select * from amdari_db.raw.managers_stage limit 10;
 
 CREATE OR REPLACE SCHEMA analytics;
 
-CREATE OR REPLACE VIEW amdari_db.analytics.paris_customer_vw AS
+CREATE OR REPLACE VIEW amdari_db.analytics.customer_weather_berlyn AS
 SELECT 
     cs.customer_id,
     cs.city,
@@ -215,18 +215,23 @@ SELECT
     cs.postal_code,
     cs.card_number,
     cs.updated_at,
-    ps.date_col,
-    ps.location_name, 
-    ps.temperature_2m_mean,
-    ps.latitude,
-    ps.longitude,
-    ps.temperature_2m_max,
-    ps.temperature_2m_min,
-    ps.weather_code,
-    ps.sunshine_duration
+    al.date_col AS weather_date,
+    al.location_name, 
+    al.temperature_2m_mean,
+    al.latitude,
+    al.longitude,
+    al.temperature_2m_max,
+    al.temperature_2m_min,
+    al.weather_code,
+    al.sunshine_duration
 FROM amdari_db.raw.customers_stage AS cs
-INNER JOIN amdari_db.raw.paris_stage_table AS ps
-ON DATE(ps.date_col) = DATE(cs.updated_at);
+JOIN amdari_db.raw.all_loc_weather_stage AS al
+    ON TO_DATE(cs.updated_at) = TO_DATE(al.date_col)
+    where al.latitude = '52.52'
+    AND AL.LONGITUDE = '13.41';
+
+
+select COUNT(*) from amdari_db.analytics.customer_weather_berlyn limit 10;
 
 
 USE SCHEMA analytics;
