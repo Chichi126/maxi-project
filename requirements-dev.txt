@@ -1,6 +1,0 @@
-isort
-flake8
-
-
-
-# This file is used to

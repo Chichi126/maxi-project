@@ -1,37 +1,41 @@
 variable "bucket_name" {
-  description = "Name of the Google Cloud Storage bucket"
+  description = "The name of the GCS bucket"
   type        = string
 }
 
 variable "bucket_location" {
-  type = string
+  description = "The location of the GCS bucket"
+  type        = string
 }
 
 variable "force_destroy" {
-  type    = bool
-  default = true
-}
-
-variable "public_access_prevention" {
-  type    = string
-  default = "enforced"
+  description = "Whether to force destroy the bucket"
+  type        = bool
+  default     = false
 }
 
 variable "lifecycle_rule_age" {
-  type = number
+  description = "The age in days to apply lifecycle rules"
+  type        = number
 }
 
-
 variable "project_id" {
+  description = "The GCP project ID"
   type        = string
-  description = "The ID of the Google Cloud project"
 }
 
 variable "region" {
-  type = string
+  description = "The GCP region"
+  type        = string
 }
 
 variable "credentials" {
+  description = "Path to the GCP credentials JSON file"
   type        = string
-  description = "Path to the Google Cloud service account credentials JSON file"
+}
+
+variable "public_access_prevention" {
+  description = "Whether public access to bucket is prevented"
+  type        = string
+  default     = "enforced"
 }
