@@ -1,0 +1,2 @@
+{"timestamp":"2025-08-02T14:51:07.828719","level":"info","event":"Filling up the DagBag from /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_setup_teardown.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-02T14:51:38.005368","level":"info","event":"Filling up the DagBag from /home/airflow/.local/lib/python3.10/site-packages/airflow/example_dags/example_setup_teardown.py","logger":"airflow.models.dagbag.DagBag"}
