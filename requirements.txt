@@ -1,0 +1,9 @@
+# apache-airflow-providers-google
+# apache-airflow-providers-postgres
+pandas
+pyarrow
+python-dateutil
+psycopg2-binary
+# great-expectations
+google-cloud-storage
+numpy

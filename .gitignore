@@ -1,0 +1,15 @@
+venv
+service.json
+.terraform
+terraform.*
+.terraform.lock.hcl
+.env
+# Ignore Airflow & runtime files
+logs/
+dags/__pycache__/
+*.pyc
+
+# Ignore system files
+*.DS_Store
+dags
+
